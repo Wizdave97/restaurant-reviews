@@ -1,1 +1,39 @@
-<p>This is the home view.</p>
+<section  class="map-container">
+  <div id="map" class="map">
+
+  </div>
+</section>
+<section class="restaurants">
+  <div class="filters">
+    <div class="">
+      <select class="" name="" ng-model="home.location">
+        <option value="">All Neighborhoods</option>
+        <option value="">Manhattan</option>
+        <option value="">Brooklyn</option>
+        <option value="">Queens</option>
+      </select>
+    </div>
+    <div class="">
+      <select class="" name="" ng-model="home.type">
+        <option value="">All Cuisines</option>
+        <option value="">Asian</option>
+        <option value="">Mexican</option>
+        <option value="">American</option>
+        <option value="">Pizza</option>
+      </select>
+    </div>
+  </div>
+  <div class="restaurant-cards">
+    <div  class="card" ng-repeat="restaurant in home.restaurants track by $index">
+      <div class="card-image">
+        <img ng-src="img/{{restaurant.photograph}}" alt="{{restaurant.name}}">
+      </div>
+      <div class="card-details">
+        <h3 class="restaurant-name">{{restaurant.name}}</h3>
+        <p class="restaurant-location">{{restaurant.neighborhood}}</p>
+        <p>{{restaurant.address}}</p>
+        <button class="btn" type="button" name="button">View Details</button>
+      </div>
+    </div>
+  </div>
+</section>

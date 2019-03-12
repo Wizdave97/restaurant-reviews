@@ -14,5 +14,14 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngTouch'
-  ]);
+    'ngTouch',
+    'ui.router'
+  ]).config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+    $urlRouterProvider.otherwise('/home');
+    $stateProvider.
+    state('home',{
+      url:'/home',
+      templateUrl:'views/home.html',
+      controller:"HomeCtrl as home"
+    })
+  }]);

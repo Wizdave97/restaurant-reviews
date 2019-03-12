@@ -8,10 +8,7 @@
  * Controller of the restaurantReviewsApp
  */
 angular.module('restaurantReviewsApp')
-  .controller('HomeCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('HomeCtrl',['restaurantData', function (restaurantData) {
+      this.restaurants=restaurantData.getRestaurants()
+      console.log(this.restaurants)
+  }]);
