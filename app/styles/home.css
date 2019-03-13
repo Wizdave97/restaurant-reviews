@@ -102,4 +102,7 @@
   .btn{
     width:30%;
   }
+  select{
+    height:40px;
+  }
 }

@@ -31,7 +31,6 @@ angular.module('restaurantReviewsApp')
       for(let restaurant of self.restaurants){
         if(restaurant.name==self.location || restaurant.cuisine_type==self.type){
           markers.push(mapService.mapMarkerForRestaurant(restaurant,mapService.newMap));
-          console.log(self.location)
         }
         else if(!self.location && !self.type){
            markers.push(mapService.mapMarkerForRestaurant(restaurant,mapService.newMap));

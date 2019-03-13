@@ -8,6 +8,8 @@
  *
  * Main module of the application.
  */
+
+
 angular
   .module('restaurantReviewsApp', [
     'ngAnimate',
@@ -29,4 +31,12 @@ angular
       templateUrl:'views/restaurantinfo.html',
       controller:'RestaurantinfoCtrl as restaurant'
     })
+    
   }]);
+  if(navigator.serviceWorker){
+    navigator.serviceWorker.register('/sw.js').then(function(reg){
+      console.log('Successful')
+    }).catch(function(err){
+      console.log(err)
+    })
+  }
