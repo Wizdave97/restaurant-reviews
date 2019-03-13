@@ -56,7 +56,6 @@
 
 }
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -84,9 +83,9 @@ tr:nth-child(even) {
 
   }
   .res-image{
-    width:53%;
+    width:50%;
   }
   .res-table{
-    width:45%;
+    width:49%;
   }
 }
