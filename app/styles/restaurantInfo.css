@@ -2,7 +2,8 @@
   display:flex;
   width:100%;
   height:400px;
-  order:2
+  order:3;
+  margin-top:5px;
 }
 .map-single{
   display: block;
@@ -13,16 +14,26 @@
   width:100%;
   display: flex;
   flex-wrap:wrap;
-  order:1
+  order:2
 }
 .res-details{
+  width:100%;
+  height:auto;
+  display:flex;
+  order:1
+}
+.res-image{
+  width:100%;
+  height:auto;
+}
+.res-image img{
   width:100%;
   height:auto;
 }
 
 .res-reviews{
   width:100%;
-  order:3
+  order:4;
   display:flex;
   flex-wrap: wrap;
   padding: 8px;
@@ -32,4 +43,50 @@
   height:auto;
   box-shadow:-6px -10px 15px rgba(0,0,0,0.3), 6px 10px 15px rgba(0,0,0,0.3);
   padding:8px;
+  margin-bottom: 12px;
+}
+.review-card p{
+  margin:0;
+  padding:4px;
+  text-align:left;
+}
+.res-table{
+  width:100%;
+  height:auto;
+
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.table-heading h4{
+  text-align:center;
+  margin:0;
+  padding:0;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+@media screen and (min-width:576px){
+  .details{
+
+    flex-wrap:nowrap;
+    flex-flow:row;
+    justify-content: space-between;
+    margin-bottom:8px;
+
+  }
+  .res-image{
+    width:53%;
+  }
+  .res-table{
+    width:45%;
+  }
 }

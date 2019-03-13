@@ -11,9 +11,11 @@
  }
  */
 angular.module('restaurantReviewsApp')
-  .controller('HomeCtrl',['$http','mapService','$window', function ($http,mapService,$window) {
+  .controller('HomeCtrl',['$http','mapService','$window','$rootScope',function ($http,mapService,$window,$rootScope) {
     let self=this;
     let markers=[];
+    this.lng=40.72216;
+    this.lat=-73.987501;
     var event=new Event('markers');
     $window.addEventListener('markers',function(){
       self.marker();
@@ -21,8 +23,9 @@ angular.module('restaurantReviewsApp')
     $http({url:'/data/restaurants.json',method:'GET'}).then((response)=>{
          self.restaurants=response.data.restaurants;
          $window.dispatchEvent(event);
+         $rootScope.restaurants=response.data.restaurants;
          })
-    mapService.initMap();
+    mapService.initMap(this.lng,this.lat);
 
     this.marker =function (){
       for(let restaurant of self.restaurants){
@@ -43,4 +46,5 @@ angular.module('restaurantReviewsApp')
       markers=[];
       $window.dispatchEvent(event)
     }
+
   }]);

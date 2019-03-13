@@ -1,20 +1,41 @@
+<section class="res-details">
+  <div class="card-details">
+    <h3 class="restaurant-name">{{restaurant.currentRestaurant.name}}</h3>
+    <p class="restaurant-location"><strong>Neighbourhood</strong>: {{restaurant.currentRestaurant.neighborhood}}</p>
+    <p class="restaurant-location"><strong>Address</strong>: {{restaurant.currentRestaurant.address}}</p>
+    <p class="restaurant-location"><strong>Cuisine Type</strong>: {{restaurant.currentRestaurant.cuisine_type}}</p>
+  </div>
+</section>
+
 <section  class="map-container-single">
   <div id="map" class="map-single">
 
   </div>
 </section>
 <section class="details">
-  <div class="res-details">
-    <div class="res-image">
-
-    </div>
-    <div class="res-table">
-
-    </div>
+  <div class="res-image">
+    <img ng-src="img/{{restaurant.currentRestaurant.photograph}}" alt="{{restaurant.currentRestaurant.name}}">
   </div>
+
+
+    <div class="res-table">
+      <table>
+        <tr class="table-heading">
+          <h4>Operating Hours</h4>
+        </tr>
+        <tr ng-repeat="(day,time) in restaurant.currentRestaurant.operating_hours">
+          <td>{{day}}</td>
+          <td>{{time}}</td>
+        </tr>
+      </table>
+    </div>
+
 </section>
 <section class="res-reviews">
-  <div class="review-card" ng-repeat="">
-
+  <div class="review-card" ng-repeat="review in restaurant.currentRestaurant.reviews">
+    <h4>Reviewer: {{review.name}}</h4>
+    <p><strong>Date</strong>: {{review.date}}</p>
+    <p><strong>Rating</strong>: {{review.rating}}</p>
+    <p><em>{{review.comments}}</em></p>
   </div>
 </section>

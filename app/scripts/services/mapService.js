@@ -10,13 +10,12 @@
 angular.module('restaurantReviewsApp')
   .service('mapService',['$http', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    this.lng=40.72216;
-    this.lat=-73.987501;
+    
     this.newMap=null;
     let self=this;
-    this.initMap = () => {
+    this.initMap = (lng,lat) => {
       self.newMap = L.map('map', {
-            center: [self.lng,self.lat],
+            center: [lng,lat],
             zoom: 12,
             scrollWheelZoom: true
           });
