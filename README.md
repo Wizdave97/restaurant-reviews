@@ -1,12 +1,7 @@
 # restaurant-reviews
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+A Restuarant reviews web app with mobile responsive design and offline page caching using the serviceWorker API
 
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
