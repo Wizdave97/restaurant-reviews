@@ -1,0 +1,35 @@
+.map-container-single{
+  display:flex;
+  width:100%;
+  height:400px;
+  order:2
+}
+.map-single{
+  display: block;
+  width:100%;
+  height:100%;
+}
+.details{
+  width:100%;
+  display: flex;
+  flex-wrap:wrap;
+  order:1
+}
+.res-details{
+  width:100%;
+  height:auto;
+}
+
+.res-reviews{
+  width:100%;
+  order:3
+  display:flex;
+  flex-wrap: wrap;
+  padding: 8px;
+}
+.review-card{
+  width:100%;
+  height:auto;
+  box-shadow:-6px -10px 15px rgba(0,0,0,0.3), 6px 10px 15px rgba(0,0,0,0.3);
+  padding:8px;
+}

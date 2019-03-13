@@ -6,33 +6,35 @@
 <section class="restaurants">
   <div class="filters">
     <div class="">
-      <select class="" name="" ng-model="home.location">
+      <select ng-change="home.filterMap()"  ng-model="home.location">
+        <option value="Queens">Queens</option>
+        <option value="Manhattan">Manhattan</option>
+        <option value="Brooklyn">Brooklyn</option>
         <option value="">All Neighborhoods</option>
-        <option value="">Manhattan</option>
-        <option value="">Brooklyn</option>
-        <option value="">Queens</option>
       </select>
     </div>
     <div class="">
-      <select class="" name="" ng-model="home.type">
+      <select ng-change="home.filterMap()" ng-model="home.type">
+        <option value="Asian">Asian</option>
+        <option value="Mexican">Mexican</option>
+        <option value="American">American</option>
+        <option value="Pizza">Pizza</option>
         <option value="">All Cuisines</option>
-        <option value="">Asian</option>
-        <option value="">Mexican</option>
-        <option value="">American</option>
-        <option value="">Pizza</option>
       </select>
     </div>
   </div>
   <div class="restaurant-cards">
-    <div  class="card" ng-repeat="restaurant in home.restaurants track by $index">
+    <h4 ng-if="!home.restaurants">Loading...</h4>
+    <div  class="card" ng-repeat="restaurant in home.restaurants  | filter:home.location |filter:home.type">
       <div class="card-image">
         <img ng-src="img/{{restaurant.photograph}}" alt="{{restaurant.name}}">
       </div>
       <div class="card-details">
         <h3 class="restaurant-name">{{restaurant.name}}</h3>
-        <p class="restaurant-location">{{restaurant.neighborhood}}</p>
-        <p>{{restaurant.address}}</p>
-        <button class="btn" type="button" name="button">View Details</button>
+        <p class="restaurant-location"><strong>Neighbourhood</strong>: {{restaurant.neighborhood}}</p>
+        <p class="restaurant-location"><strong>Address</strong>: {{restaurant.address}}</p>
+        <p class="restaurant-location"><strong>Cuisine Type</strong>: {{restaurant.cuisine_type}}</p>
+        <button class="btn" type="button" name="button"><a ui-sref="restaurant({id:restaurant.id})">View Details</a></button>
       </div>
     </div>
   </div>

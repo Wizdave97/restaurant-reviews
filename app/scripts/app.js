@@ -23,5 +23,10 @@ angular
       url:'/home',
       templateUrl:'views/home.html',
       controller:"HomeCtrl as home"
+    }).
+    state('restaurant',{
+      url:'/home/restaurant:id',
+      templateUrl:'views/restaurantinfo.html',
+      controller:'RestaurantinfoCtrl as restaurant'
     })
   }]);
